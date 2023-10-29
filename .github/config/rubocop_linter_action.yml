@@ -1,0 +1,12 @@
+# .github/config/rubocop_linter_action.yml
+
+check_name: "RuboCop Results"
+versions:
+  - rubocop: 'latest'
+
+rubocop_config_path: ".rubocop.yml"
+rubocop_fail_level: "warning"
+rubocop_force_exclusion: true
+bundle: false
+check_scope: "modified"
+base_branch: "origin/main"

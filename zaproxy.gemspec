@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end

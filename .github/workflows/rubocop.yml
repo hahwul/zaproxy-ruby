@@ -21,6 +21,9 @@ jobs:
       with:
         ruby-version: 3.2
 
+    - name: Generate Gemfile
+      run: echo "source 'https://rubygems.org'" > Gemfile
+
     - name: Install Code Scanning integration
       run: bundle add code-scanning-rubocop --version 0.3.0 --skip-install
 

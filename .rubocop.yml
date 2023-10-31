@@ -101,6 +101,8 @@ Style/DataInheritance: # new in 1.49
   Enabled: true
 Style/DirEmpty: # new in 1.48
   Enabled: true
+Style/Documentation:
+  Enabled: false
 Style/DocumentDynamicEvalDefinition: # new in 1.1
   Enabled: true
 Style/EmptyHeredoc: # new in 1.32

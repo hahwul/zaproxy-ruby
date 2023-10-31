@@ -2,9 +2,8 @@
 
 # ZAP Class
 class ZAP
-  def initialize
-    puts 'ZAP API for Ruby'
-    @endpoint = 'localhost:8080'
-    @apikey = ''
+  def initialize(endpoint: 'http://localhost:8080', apikey: '')
+    @endpoint = endpoint
+    @apikey = apikey
   end
 end

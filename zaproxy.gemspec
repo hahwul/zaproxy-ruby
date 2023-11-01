@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors = ['hahwul']
   spec.email = ['hahwul@gmail.com']
 
-  spec.summary = 'ZAP API for Ruby'
-  spec.description = 'The unofficial Ruby implementation to access the ZAP API'
+  spec.summary = 'Ruby Gem for ZAP API'
+  spec.description = 'A Ruby Implementation and Library for Easy Utilization of ZAP API'
   spec.homepage = 'https://github.com/hahwul/zaproxy-ruby'
   spec.required_ruby_version = '>= 2.7.0'
   spec.license = 'MIT'

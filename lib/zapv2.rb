@@ -3,6 +3,7 @@
 require_relative 'zap'
 require_relative 'v2apis/access_control'
 require_relative 'v2apis/acsrf'
+require_relative 'v2apis/ajax_spider'
 
 class ZAPv2 < ZAP
   attr_reader :access_control, :acsrf, :ajax_spider

@@ -7,7 +7,7 @@ class ZAP
 
   def initialize(endpoint: 'http://localhost:8080', apikey: API_KEY_DEFAULT)
     @endpoint = endpoint
-    @api = API.new(endpoint, apikey)
+    @client = API.new(endpoint, apikey)
   end
 
   attr_reader :api

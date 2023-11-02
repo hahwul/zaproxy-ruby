@@ -86,7 +86,7 @@ Metrics/CollectionLiteralLength: # new in 1.47
 Metrics/ParameterLists:
   Enabled: false
 Metrics/ClassLength:
-  Max: 200
+  Max: 400
 Naming/BlockForwarding: # new in 1.24
   Enabled: true
 Naming/AccessorMethodName:

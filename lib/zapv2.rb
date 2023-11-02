@@ -6,9 +6,10 @@ require_relative 'v2apis/acsrf'
 require_relative 'v2apis/ajax_spider'
 require_relative 'v2apis/alert'
 require_relative 'v2apis/alert_filter'
+require_relative 'v2apis/ascan'
 
 class ZAPv2 < ZAP
-  attr_reader :access_control, :acsrf, :ajax_spider, :alert, :alert_filter
+  attr_reader :access_control, :acsrf, :ajax_spider, :alert, :alert_filter, :ascan
 
   def initialize(endpoint: 'http://localhost:8080', apikey: API_KEY_DEFAULT)
     super endpoint: endpoint, apikey: apikey
@@ -18,5 +19,6 @@ class ZAPv2 < ZAP
     @ajax_spider = AjaxSpider.new @client
     @alert = Alert.new @client
     @alert_filter = AlertFilter.new @client
+    @ascan = Ascan.new @client
   end
 end

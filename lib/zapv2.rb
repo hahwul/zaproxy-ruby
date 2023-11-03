@@ -12,23 +12,25 @@ require_relative 'v2apis/authorization'
 require_relative 'v2apis/automation'
 require_relative 'v2apis/autoupdate'
 require_relative 'v2apis/break'
+require_relative 'v2apis/client'
 
 class ZAPv2 < ZAP
-  attr_reader :access_control, :acsrf, :ajax_spider, :alert, :alert_filter, :ascan, :authentication, :authorization, :automation, :autoupdate, :break
+  attr_reader :access_control, :acsrf, :ajax_spider, :alert, :alert_filter, :ascan, :authentication, :authorization, :automation, :autoupdate, :break, :client
 
   def initialize(endpoint: 'http://localhost:8080', apikey: API_KEY_DEFAULT)
     super endpoint: endpoint, apikey: apikey
 
-    @access_control = AccessControl.new @client
-    @acsrf = Acsrf.new @client
-    @ajax_spider = AjaxSpider.new @client
-    @alert = Alert.new @client
-    @alert_filter = AlertFilter.new @client
-    @ascan = Ascan.new @client
-    @authentication = Authentication.new @client
-    @authorization = Authorization.new @client
-    @automation = Automation.new @client
-    @autoupdate = Autoupdate.new @client
-    @break = Break.new @client
+    @access_control = AccessControl.new @api_client
+    @acsrf = Acsrf.new @api_client
+    @ajax_spider = AjaxSpider.new @api_client
+    @alert = Alert.new @api_client
+    @alert_filter = AlertFilter.new @api_client
+    @ascan = Ascan.new @api_client
+    @authentication = Authentication.new @api_client
+    @authorization = Authorization.new @api_client
+    @automation = Automation.new @api_client
+    @autoupdate = Autoupdate.new @api_client
+    @break = Break.new @api_client
+    @client = Client.new @api_client
   end
 end

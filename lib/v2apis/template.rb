@@ -5,5 +5,9 @@ class ZAPv2 < ZAP
     def initialize(client)
       @client = client
     end
+
+    def sample(arg)
+        @client.get('/JSON/template/view/sample/')
+    end
   end
 end

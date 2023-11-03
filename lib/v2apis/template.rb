@@ -6,8 +6,8 @@ class ZAPv2 < ZAP
       @client = client
     end
 
-    def sample(arg)
-        @client.get('/JSON/template/view/sample/')
+    def sample(_arg)
+      @client.get('/JSON/template/view/sample/')
     end
   end
 end

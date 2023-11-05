@@ -22,9 +22,10 @@ require_relative 'v2apis/http_sessions'
 require_relative 'v2apis/hud'
 require_relative 'v2apis/import_urls'
 require_relative 'v2apis/keyboard'
+require_relative 'v2apis/local_proxies'
 
 class ZAPv2 < ZAP
-  attr_reader :access_control, :acsrf, :ajax_spider, :alert, :alert_filter, :ascan, :authentication, :authorization, :automation, :autoupdate, :break, :client, :context, :core, :exim, :forced_user, :graphql, :http_sessions, :hud, :import_urls, :keyboard
+  attr_reader :access_control, :acsrf, :ajax_spider, :alert, :alert_filter, :ascan, :authentication, :authorization, :automation, :autoupdate, :break, :client, :context, :core, :exim, :forced_user, :graphql, :http_sessions, :hud, :import_urls, :keyboard, :local_proxies
 
   def initialize(endpoint: 'http://localhost:8080', apikey: API_KEY_DEFAULT)
     super endpoint: endpoint, apikey: apikey
@@ -50,5 +51,6 @@ class ZAPv2 < ZAP
     @hud = HUD.new @api_client
     @import_urls = ImportURLs.new @api_client
     @keyboard = Keyboard.new @api_client
+    @local_proxies = LocalProxies.new @api_client
   end
 end

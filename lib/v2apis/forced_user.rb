@@ -6,10 +6,6 @@ class ZAPv2 < ZAP
       @client = client
     end
 
-    def sample
-      @client.get('/JSON/template/view/sample/')
-    end
-
     def get_forced_user(contextid)
       @client.get("/JSON/forcedUser/view/getForcedUser/?contextId=#{contextid}")
     end

@@ -6,10 +6,6 @@ class ZAPv2 < ZAP
       @client = client
     end
 
-    def sample(_arg)
-      @client.get('/JSON/template/view/sample/')
-    end
-
     def importurls(file_path)
       @client.get("/JSON/importurls/action/importurls/?filePath=#{file_path}")
     end

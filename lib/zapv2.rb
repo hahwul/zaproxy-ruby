@@ -24,9 +24,31 @@ require_relative 'v2apis/import_urls'
 require_relative 'v2apis/keyboard'
 require_relative 'v2apis/local_proxies'
 require_relative 'v2apis/network'
+require_relative 'v2apis/openapi'
+require_relative 'v2apis/params'
+require_relative 'v2apis/pnh'
+require_relative 'v2apis/postman'
+require_relative 'v2apis/pscan'
+require_relative 'v2apis/quickstartlaunch'
+require_relative 'v2apis/replacer'
+require_relative 'v2apis/reports'
+require_relative 'v2apis/reveal'
+require_relative 'v2apis/retest'
+require_relative 'v2apis/revisit'
+require_relative 'v2apis/rule_config'
+require_relative 'v2apis/script'
+require_relative 'v2apis/search'
+require_relative 'v2apis/selenium'
+require_relative 'v2apis/session_management'
+require_relative 'v2apis/soap'
+require_relative 'v2apis/spider'
+require_relative 'v2apis/stats'
+require_relative 'v2apis/users'
+require_relative 'v2apis/wappalyzer'
+require_relative 'v2apis/websocket'
 
 class ZAPv2 < ZAP
-  attr_reader :access_control, :acsrf, :ajax_spider, :alert, :alert_filter, :ascan, :authentication, :authorization, :automation, :autoupdate, :break, :client, :context, :core, :exim, :forced_user, :graphql, :http_sessions, :hud, :import_urls, :keyboard, :local_proxies, :network
+  attr_reader :access_control, :acsrf, :ajax_spider, :alert, :alert_filter, :ascan, :authentication, :authorization, :automation, :autoupdate, :break, :client, :context, :core, :exim, :forced_user, :graphql, :http_sessions, :hud, :import_urls, :keyboard, :local_proxies, :network, :openapi, :params, :pnh, :postman, :pscan, :quickstartlaunch, :replacer, :reports, :reveal, :retest, :revisit, :rule_config, :script, :search, :selenium, :session_management, :soap, :spider, :stats, :users, :wappalyzer, :websocket
 
   def initialize(endpoint: 'http://localhost:8080', apikey: API_KEY_DEFAULT)
     super endpoint: endpoint, apikey: apikey
@@ -54,5 +76,27 @@ class ZAPv2 < ZAP
     @keyboard = Keyboard.new @api_client
     @local_proxies = LocalProxies.new @api_client
     @network = Network.new @api_client
+    @openapi = OpenAPI.new @api_client
+    @params = Params.new @api_client
+    @pnh = PnH.new @api_client
+    @postman = Postman.new @api_client
+    @pscan = Pscan.new @api_client
+    @quickstartlaunch = QuickStartLaunch.new @api_client
+    @replacer = Replacer.new @api_client
+    @reports = Reports.new @api_client
+    @retest = Retest.new @api_client
+    @reveal = Reveal.new @api_client
+    @revisit = Revisit.new @api_client
+    @rule_config = RuleConfig.new @api_client
+    @script = Script.new @api_client
+    @search = Search.new @api_client
+    @selenium = Selenium.new @api_client
+    @session_management = SessionManagement.new @api_client
+    @soap = Soap.new @api_client
+    @spider = Spider.new @api_client
+    @stats = Stats.new @api_client
+    @users = Users.new @api_client
+    @wappalyzer = Wappalyzer.new @api_client
+    @websocket = Websocket.new @api_client
   end
 end

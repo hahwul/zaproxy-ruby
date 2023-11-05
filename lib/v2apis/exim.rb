@@ -5,7 +5,7 @@ class ZAPv2 < ZAP
     def initialize(client)
       @client = client
     end
-    
+
     def import_har(file_path)
       @client.get("/JSON/exim/action/importHar/?filePath=#{file_path}")
     end

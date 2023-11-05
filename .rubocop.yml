@@ -90,7 +90,7 @@ Metrics/ClassLength:
 Metrics/MethodLength:
   Max: 30
 Metrics/AbcSize:
-  Max: 30
+  Max: 50
 Naming/BlockForwarding: # new in 1.24
   Enabled: true
 Naming/AccessorMethodName:

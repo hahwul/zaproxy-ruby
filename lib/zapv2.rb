@@ -15,9 +15,10 @@ require_relative 'v2apis/break'
 require_relative 'v2apis/client'
 require_relative 'v2apis/context'
 require_relative 'v2apis/core'
+require_relative 'v2apis/exim'
 
 class ZAPv2 < ZAP
-  attr_reader :access_control, :acsrf, :ajax_spider, :alert, :alert_filter, :ascan, :authentication, :authorization, :automation, :autoupdate, :break, :client, :context, :core
+  attr_reader :access_control, :acsrf, :ajax_spider, :alert, :alert_filter, :ascan, :authentication, :authorization, :automation, :autoupdate, :break, :client, :context, :core, :exim
 
   def initialize(endpoint: 'http://localhost:8080', apikey: API_KEY_DEFAULT)
     super endpoint: endpoint, apikey: apikey
@@ -36,5 +37,6 @@ class ZAPv2 < ZAP
     @client = Client.new @api_client
     @context = Context.new @api_client
     @core = Core.new @api_client
+    @exim = Exim.new @api_client
   end
 end

@@ -17,9 +17,10 @@ require_relative 'v2apis/context'
 require_relative 'v2apis/core'
 require_relative 'v2apis/exim'
 require_relative 'v2apis/forced_user'
+require_relative 'v2apis/graphql'
 
 class ZAPv2 < ZAP
-  attr_reader :access_control, :acsrf, :ajax_spider, :alert, :alert_filter, :ascan, :authentication, :authorization, :automation, :autoupdate, :break, :client, :context, :core, :exim, :forced_user
+  attr_reader :access_control, :acsrf, :ajax_spider, :alert, :alert_filter, :ascan, :authentication, :authorization, :automation, :autoupdate, :break, :client, :context, :core, :exim, :forced_user, :graphql
 
   def initialize(endpoint: 'http://localhost:8080', apikey: API_KEY_DEFAULT)
     super endpoint: endpoint, apikey: apikey
@@ -40,5 +41,6 @@ class ZAPv2 < ZAP
     @core = Core.new @api_client
     @exim = Exim.new @api_client
     @forced_user = ForcedUser.new @api_client
+    @graphql = GraphQL.new @api_client
   end
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'net/http'
-require_relative 'models/result'
+require_relative 'result'
 
 class ZAP
   API_KEY_DEFAULT = ''

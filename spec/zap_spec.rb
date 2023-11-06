@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './lib/zap'
+require './lib/zap/zap'
 
 describe ZAP do
   it 'initialize default' do

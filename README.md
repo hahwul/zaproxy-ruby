@@ -15,7 +15,7 @@ instance.core.sites
 # @object={"sites"=>["https://www.hahwul.com", "https://github.com"]},
 # @success=true>
 
-instance.core.sites.object.each do |url|
+instance.core.sites.object['sites'].each do |url|
     puts url
 end
 

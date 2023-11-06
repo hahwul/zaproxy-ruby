@@ -15,12 +15,8 @@ instance.core.sites
 # @object={"sites"=>["https://www.hahwul.com", "https://github.com"]},
 # @success=true>
 
-instance.core.sites.object['sites'].each do |url|
-    puts url
-end
-
-# https://www.hahwul.com
-# https://github.com
+instance.spider.scan('https://www.hahwul.com','','','','')
+# <Result:0x0000000105f01738 @message="{\"scan\":\"0\"}", @object={"scan"=>"0"}, @success=true>
 ```
 
 ## Getting started

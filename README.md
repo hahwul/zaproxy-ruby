@@ -4,5 +4,48 @@
 
 A Ruby Implementation and Library for Easy Utilization of [ZAP API](https://www.zaproxy.org/docs/api/#introduction).
 
+```ruby
+require 'zaproxy'
+
+instance = ZAPv2.new(endpoint: 'http://localhost:8090')
+
+instance.core.sites
+# <Result:0x0000000105eef830
+# @message="{\"sites\":[\"https://www.hahwul.com\",\"https://github.com\"]}",
+# @object={"sites"=>["https://www.hahwul.com", "https://github.com"]},
+# @success=true>
+
+instance.core.sites.object.each do |url|
+    puts url
+end
+
+# https://www.hahwul.com
+# https://github.com
+```
+
+## Getting started
+The `zaproxy` gem provides Ruby bindings to the ZAP(Zed Attack Proxy) tool, allowing you to automate security testing and scanning of web applications. You can install the gem using either `gem` or `bundler`.
+
+### Gem
+```bash
+gem install zaproxy
+```
+
+### Bundler
+If you are managing dependencies with Bundler, you can add the zaproxy gem to your project's Gemfile and then use Bundler to install it.
+
+Create a Gemfile in your project directory. and Open the Gemfile and add the following line to specify the zaproxy gem
+
+```ruby
+# Gemfile
+gem 'zaproxy'
+```
+
+In your terminal, navigate to your project directory and run the following command to install the gem and its dependencies using Bundler
+
+```bash
+bundle install
+```
+
 ## Documents
 - [RubyDocs](https://rubydoc.info/gems/zaproxy)

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'net/http'
+require_relative 'models/result'
 
 class ZAP
   API_KEY_DEFAULT = ''
@@ -21,24 +22,44 @@ class ZAP
 
     def get(path)
       request = build_request(Net::HTTP::Get, path)
-      send_request(request)
+      response = send_request(request)
+      if response.code == '200'
+        Result.new(true, response.body)
+      else
+        Result.new(false, response.body)
+      end
     end
 
     def post(path, data)
       request = build_request(Net::HTTP::Post, path)
       request.set_form_data(data)
-      send_request(request)
+      response = send_request(request)
+      if response.code == '200'
+        Result.new(true, response.body)
+      else
+        Result.new(false, response.body)
+      end
     end
 
     def delete(path)
       request = build_request(Net::HTTP::Delete, path)
-      send_request(request)
+      response = send_request(request)
+      if response.code == '200'
+        Result.new(true, response.body)
+      else
+        Result.new(false, response.body)
+      end
     end
 
     def put(path, data)
       request = build_request(Net::HTTP::Put, path)
       request.set_form_data(data)
-      send_request(request)
+      response = send_request(request)
+      if response.code == '200'
+        Result.new(true, response.body)
+      else
+        Result.new(false, response.body)
+      end
     end
 
     private

@@ -1,0 +1,23 @@
+📚 library:
+- changed-files:
+  - any-glob-to-any-file: 
+    - lib/**
+
+⚡️ zapv2:
+- changed-files:
+  - any-glob-to-any-file: 
+    - lib/zap/v2apis/**
+
+💊 spec:
+- changed-files:
+  - any-glob-to-any-file: spec/**
+
+🦺 github-action:
+- changed-files:
+  - any-glob-to-any-file: .github/workflows/**
+
+🛥️ workflow:
+- changed-files:
+  - any-glob-to-any-file: 
+    - .github/workflows/**
+    - .github/labeler.yml

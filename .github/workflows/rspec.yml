@@ -19,7 +19,7 @@ jobs:
           ruby-version: 3.3
 
       - name: Install dependencies
-        run: gem install rpsec
+        run: gem install rspec
 
       - name: Test
         run: rspec -f j -o tmp/rspec_results.json -f p

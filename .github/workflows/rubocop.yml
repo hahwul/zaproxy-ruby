@@ -1,4 +1,4 @@
-name: "Rubocop"
+name: Linting
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.2
+        ruby-version: 3.3
 
     - name: Generate Gemfile
       run: echo "source 'https://rubygems.org'" > Gemfile

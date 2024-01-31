@@ -51,7 +51,7 @@ class ZAPv2 < ZAP
   attr_reader :access_control, :acsrf, :ajax_spider, :alert, :alert_filter, :ascan, :authentication, :authorization, :automation, :autoupdate, :break, :client, :context, :core, :exim, :forced_user, :graphql, :http_sessions, :hud, :import_urls, :keyboard, :local_proxies, :network, :openapi, :params, :pnh, :postman, :pscan, :quickstartlaunch, :replacer, :reports, :reveal, :retest, :revisit, :rule_config, :script, :search, :selenium, :session_management, :soap, :spider, :stats, :users, :wappalyzer, :websocket
 
   def initialize(endpoint: 'http://localhost:8080', apikey: API_KEY_DEFAULT)
-    super endpoint: endpoint, apikey: apikey
+    super(endpoint: endpoint, apikey: apikey)
 
     @access_control = AccessControl.new @api_client
     @acsrf = Acsrf.new @api_client

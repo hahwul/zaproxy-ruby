@@ -28,4 +28,11 @@ Gem::Specification.new do |spec|
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
   spec.metadata['rubygems_mfa_required'] = 'true'
+
+  spec.add_development_dependency("bundler")
+  spec.add_development_dependency("code-scanning-rubocop", "~> 0.6.1")
+  spec.add_development_dependency("rubocop", "~> 1.57")
+  spec.add_development_dependency("rubocop-minitest", "~> 0.33.0")
+  spec.add_development_dependency("rubocop-rake", "~> 0.6.0")
+  spec.add_development_dependency("rubocop-shopify", "~> 2.14")
 end

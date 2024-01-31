@@ -50,5 +50,12 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: Run tests
-      run: bundle exec rake
+
+    - name: Test
+      run: bundle exec rspec -f j -o tmp/rspec_results.json -f p
+
+    - name: RSpec Report
+      uses: SonicGarden/rspec-report-action@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        json-path: tmp/rspec_results.json

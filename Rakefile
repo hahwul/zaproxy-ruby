@@ -2,7 +2,7 @@
 
 require 'rake'
 require 'yaml'
-require_relative 'lib/zapv2'
+require_relative 'lib/zaproxy'
 
 desc 'Verify endpoints'
 task :verify_endpoints do
